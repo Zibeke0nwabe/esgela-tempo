@@ -1,0 +1,291 @@
+:root {
+  --primary-color: #F4B400; /* Yellow */
+  --secondary-color: #4285F4; /* Blue */
+  --accent-color: #EA4335; /* Red */
+  --text-color: #000000; /* Black */
+  --background-color: #FFFFFF; /* White */
+  --dark-background: #1e1e1e; /* Dark background for editor */
+  --light-text: #d4d4d4; /* Light text for editor */
+  --light-gray: #f1f1f1; /* Light gray background for UI elements */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+nav {
+  background-color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  color: white;
+}
+
+nav a:hover {
+  color: var(--primary-color); /* Adjust hover color */
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Flex layout for main sections */
+main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 500px; /* Fixed height for consistent look */
+  padding: 0; /* Ensure no extra padding */
+  margin: 0; /* Ensure no extra margin */
+}
+
+/* Section styles */
+.section {
+  flex: 1; /* Make each section take equal space */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  padding: 10px; /* Add some padding for content */
+  background-color: #fff; /* Default background for sections */
+  height: 100%; /* Ensure full height of the parent */
+}
+
+/* Specific styles for each section */
+.questions-section {
+  background-color: var(--light-gray); /* Background for the Questions section */
+  color: var(--text-color); /* Text color for the Questions section */
+  font-family: Arial, sans-serif; /* Font family */
+  border-radius: 8px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  overflow: auto;
+}
+
+.questions-section h3 {
+  font-weight: bold; /* Title in bold */
+  margin: 0;
+}
+
+.questions-section h4 {
+  font-weight: 600; /* Semibold for section headings */
+  margin-bottom: 8px;
+}
+
+.questions-section p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.questions-section pre {
+  background-color: var(--dark-background); /* Dark background for example */
+  color: var(--light-text); /* Light text for example */
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto; /* Horizontal scroll if content overflows */
+  white-space: pre-wrap; /* Preserve whitespace */
+}
+
+.questions-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Adjustments for Results Section to mimic Google Chrome */
+.result-frame {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff; /* White background to mimic Google Chrome */
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.browser-header {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1; /* Light gray background for header */
+  border-bottom: 1px solid #ccc; /* Border to mimic the chrome browser header */
+}
+
+.browser-buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+}
+
+.button {
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.button.close {
+  background-color: #e94f4f;
+}
+
+.button.minimize {
+  background-color: #f1c40f;
+}
+
+.button.maximize {
+  background-color: #2ecc71;
+}
+
+.browser-url-bar {
+  background-color: #e1e1e1; /* Slightly darker for the URL bar */
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.browser-url-bar input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  background-color: #e1e1e1;
+  color: #333;
+  font-size: 14px;
+}
+
+.browser-content {
+  border: none;
+  width: 100%;
+  height: calc(100% - 30px); /* Adjust height based on header size */
+  background-color: #ffffff; /* White background for the iframe */
+}
+
+/* Adjustments for buttons */
+.button-container {
+  margin-top: 16px;
+}
+
+.next-button, .submit-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.next-button:disabled, .submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Test section styles */
+.test-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.timer {
+  margin-bottom: 20px;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.multiple-choice, .descriptive, .coding {
+  background-color: var(--dark-background);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: var(--light-text);
+}
+
+.question {
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: var(--dark-background);
+  color: var(--light-text);
+}
+
+.submit-button {
+  margin-top: 20px;
+}
+
+.test-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.test-results h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.test-results p {
+  font-size: 18px;
+}
+
+/* Ensure no extra space around body */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
