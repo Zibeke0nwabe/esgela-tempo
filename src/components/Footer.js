@@ -36,7 +36,7 @@ const Footer = () => {
         </p>
         <form className="flex flex-col">
           <a
-            href='/'
+            href='https://portfolio-4999c.web.app/'
             className="bg-yellow-500 text-black text-center py-2 px-4 rounded hover:bg-yellow-400 transition duration-300 font-semibold"
           >
             Connect Now
